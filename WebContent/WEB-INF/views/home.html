@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Thymeleaf Test</title>
+</head>
+<body>
+    <span th:text="${test}">test-message</span>
+    <br>
+    [['Welcome message: ' + ${greeting}]]
+    <br>
+    <a th:href="@{/home}">JSP</a>
+    <br>
+    <br>
+    <h2>List of news</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Headline</th>
+            <th>Lead</th>
+            <th>Body</th>
+            <th>Created</th>
+            <th>Modified</th>
+            <th>Author</th>
+        </tr>
+        <tr th:each="news : ${allNews}">
+            <td th:text="${news.id}"></td>
+            <td th:text="${news.headline}"></td>
+            <td th:utext="${news.lead}"></td>
+            <td th:utext="${news.body}"></td>
+            <td th:text="${#dates.format(news.created, 'dd MMMM yyyy')}"></td>
+            <td th:text="${#dates.format(news.modified, 'dd MMMM yyyy')}"></td>
+            <td th:text="${news.author.ssoId}"></td>
+        </tr>
+    </table>
+</body>
+</html>

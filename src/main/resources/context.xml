@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<!-- This is an example of a context.xml within tomcat server. If running tomcat from eclipse, it will create an open project called
+Servers. Username/password needs to match with DB-credentials, since credentials are fetched with JNDI  -->
+<Context>
+
+	<!-- Default set of monitored resources. If one of these changes, the -->
+	<!-- web application will be reloaded. -->
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+
+	<!-- Uncomment this to disable session persistence across Tomcat restarts -->
+	<!-- <Manager pathname="" /> -->
+
+
+	<Resource name="jdbc/springdb" auth="Container" type="javax.sql.DataSource"
+		maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="user"
+		password="pass" driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/spring_db?useSSL=false" />
+	<Resource name="jdbc/newsdb" auth="Container" type="javax.sql.DataSource"
+	    maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="user"
+	    password="pass" driverClassName="com.mysql.cj.jdbc.Driver"
+	    url="jdbc:mysql://localhost:3306/news_db?useSSL=false"/>
+</Context>
