@@ -12,13 +12,13 @@ Servers. Username/password needs to match with DB-credentials, since credentials
 	<!-- Uncomment this to disable session persistence across Tomcat restarts -->
 	<!-- <Manager pathname="" /> -->
 
-
-	<Resource name="jdbc/springdb" auth="Container" type="javax.sql.DataSource"
-		maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="user"
-		password="pass" driverClassName="com.mysql.cj.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/spring_db?useSSL=false" />
-	<Resource name="jdbc/newsdb" auth="Container" type="javax.sql.DataSource"
+    <Resource name="jdbc/springdb" auth="Container" type="javax.sql.DataSource"
 	    maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="user"
 	    password="pass" driverClassName="com.mysql.cj.jdbc.Driver"
-	    url="jdbc:mysql://localhost:3306/news_db?useSSL=false"/>
+	    url="jdbc:mysql://localhost:3306/spring_db?useSSL=false&amp;allowPublicKeyRetrieval=true" />
+    <Resource name="jdbc/newsdb" auth="Container"
+		type="javax.sql.DataSource" maxTotal="100" maxIdle="30"
+		maxWaitMillis="10000" username="user" password="pass"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/news_db?useSSL=false&amp;allowPublicKeyRetrieval=true" />
 </Context>
