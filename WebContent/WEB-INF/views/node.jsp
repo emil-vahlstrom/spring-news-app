@@ -60,7 +60,7 @@
                 <!-- if maxCommentDepth == 1 then replies can never be read. -->
                 <c:if test="${isChildrenAllowed eq 'false' or depth ge maxCommentDepth}">
                     <li class="load-comments">
-                        <a href="<c:url value='/news/${news.id}/comments/${comment.id}'/>">Load more replies...</a>
+                        <a href="<c:url value='/news/${news.id}/comments/${comment.id}'/>">>> Load more replies...</a>
                      </li>
                 </c:if>
                 <c:if test="${isChildrenAllowed eq 'true' and depth lt maxCommentDepth}">
@@ -80,6 +80,6 @@
 </ul>
 <c:if test="${loadMore != null}">
     <li class="load-comments">
-        <a href="<c:url value='/news/${news.id}/comments/${commentParentId}'/>">!Load more replies...</a>
+        <a href="<c:url value='/news/${news.id}/comments/${commentParentId}'/>">> Load more replies...</a>
     </li>
 </c:if>
