@@ -12,7 +12,7 @@
 		<springframework.version>5.0.8.RELEASE</springframework.version>
 		<springsecurity.version>5.0.7.RELEASE</springsecurity.version>
 		<springsecurityoauth2.version>2.3.4.RELEASE</springsecurityoauth2.version>
-		<jackson.library>2.9.7</jackson.library>
+		<jackson.library>[2.9.8,)</jackson.library>
 		<thymeleaf.version>3.0.8.RELEASE</thymeleaf.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<hibernate.version>5.3.4.Final</hibernate.version>
